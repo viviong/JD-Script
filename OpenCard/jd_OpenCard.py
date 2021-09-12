@@ -143,18 +143,11 @@ readmes = """
 #### Ps:您可以到以下途径获取最新的shopid.txt，定期更新：
 
 ###### [GitHub仓库 https://github.com/curtinlv/JD-Script](https://github.com/curtinlv/JD-Script) 
-###### [Gitee仓库 https://gitee.com/curtinlv/JD-Script](https://gitee.com/curtinlv/JD-Script)
-###### [TG频道 https://t.me/TopStyle2021](https://t.me/TopStyle2021)
-###### [TG群 https://t.me/topStyle996](https://t.me/topStyle996)
-###### 关注公众号【TopStyle】回复：shopid
-![TopStyle](https://gitee.com/curtinlv/img/raw/master/gzhcode.jpg)
-# 
     @Last Version: %s
 
     @Last Time: 2021-06-19 13:55
 
     @Author: Curtin
-#### **仅以学习交流为主，请勿商业用途、禁止违反国家法律 ，转载请留个名字，谢谢!** 
 
 # End.
 [回到顶部](#readme)
@@ -178,8 +171,6 @@ scriptHeader = """
 ║                                      ║
 ════════════════════════════════════════
 @Version: {}""".format(version)
-remarks = '\n\n\tTG交流 : https://t.me/topstyle996\n\n\tTG频道 : https://t.me/TopStyle2021\n\n\t公众号 : TopStyle\n\n\t\t\t--By Curtin\n'
-
 timestamp = int(round(time.time() * 1000))
 today = datetime.datetime.now().strftime('%Y-%m-%d')
 # 获取当前工作目录
