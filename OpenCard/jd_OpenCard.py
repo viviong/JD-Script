@@ -678,7 +678,7 @@ def gettext(url):
         print(e)
 
 def isUpdate():
-    global footer, readme1, readme2, readme3, uPversion
+    global footer, readme1, readme2,  uPversion
     url = base64.decodebytes(
         b"aHR0cHM6Ly9naXRlZS5jb20vY3VydGlubHYvUHVibGljL3Jhdy9tYXN0ZXIvT3BlbkNhcmQvdXBkYXRlLmpzb24=")
     try:
@@ -689,17 +689,16 @@ def isUpdate():
         info = result['info']
         readme1 = result['readme1']
         readme2 = result['readme2']
-        readme3 = result['readme3']
         pError = result['m']
         footer = result['footer']
         getWait = result['s']
         if isEnable > 50 and isEnable < 150:
             if version != uPversion:
                 print(f"\n当前最新版本：【{uPversion}】\n\n{info}\n")
-                message(f"{readme1}{readme2}{readme3}")
+                message(f"{readme1}{readme2}")
                 time.sleep(getWait)
             else:
-                message(f"{readme1}{readme2}{readme3}")
+                message(f"{readme1}{readme2}")
                 time.sleep(getWait)
         else:
             print(pError)
@@ -883,7 +882,7 @@ def isMemory(memorylabel, startNum1, startNum2, midNum, endNum, pinNameList):
                         return startNum1, startNum2, memorylabel
                     if memoryJson['t1_startNum'] + 1 == midNum and memoryJson['t2_startNum'] + 1 == endNum:
                         print(
-                            f"\n上次已完成所有shopid，\n请输入 0 或 1\n0 : 退出。\n1 : 重新跑一次，以防有漏")
+                            f"\n上次已完成所有shopid，n请输入 0 或 1\n0 : 退出。\n1 : 重新跑一次，以防有漏")
                         try:
                             getyourNum = int(input("正在等待您的选择："))
                             if getyourNum == 1:
