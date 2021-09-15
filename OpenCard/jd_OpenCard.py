@@ -1284,9 +1284,7 @@ def start():
         message(f"\n本次总累计获得：{all_get_bean} 京豆")
     time.sleep(1)
     message("\n------- 入会总耗时 : %.03f 秒 seconds -------" % (endtime - starttime))
-    print("{0}\n{1}".format("*" * 30, scriptHeader, remarks))
-    send("【JD入会领豆】", message_info)
-    exitCodeFun(0)
-if __name__ == '__main__':
+
+    if __name__ == '__main__':
     start()
 
