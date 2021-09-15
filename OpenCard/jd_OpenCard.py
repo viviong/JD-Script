@@ -666,8 +666,6 @@ def iscookie():
         message("cookie 格式错误！...本次操作已退出")
         exitCodeFun(4)
 
-    except Exception as e:
-        print(e)
     except:
         message("请检查您的环境/版本是否正常！")
         time.sleep(10)
