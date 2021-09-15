@@ -666,50 +666,6 @@ def iscookie():
         message("cookie 格式错误！...本次操作已退出")
         exitCodeFun(4)
 
-# 检查是否有更新版本
-
-def gettext(url):
-    try:
-        resp = requests.get(url, timeout=60).text
-        if '该内容无法显示' in resp:
-            return gettext(url)
-        return resp
-    except Exception as e:
-        print(e)
-
-def isUpdate():
-    global footer, readme1, readme2,  uPversion
-    url = base64.decodebytes(
-        b"aHR0cHM6Ly9naXRlZS5jb20vY3VydGlubHYvUHVibGljL3Jhdy9tYXN0ZXIvT3BlbkNhcmQvdXBkYXRlLmpzb24=")
-    try:
-        result = gettext(url)
-        result = json.loads(result)
-        isEnable = result['isEnable']
-        uPversion = result['version']
-        info = result['info']
-        readme1 = result['readme1']
-        readme2 = result['readme2']
-        pError = result['m']
-        footer = result['footer']
-        getWait = result['s']
-        if isEnable > 50 and isEnable < 150:
-            if version != uPversion:
-                print(f"\n当前最新版本：【{uPversion}】\n\n{info}\n")
-                message(f"{readme1}{readme2}")
-                time.sleep(getWait)
-            else:
-                message(f"{readme1}{readme2}")
-                time.sleep(getWait)
-        else:
-            print(pError)
-            time.sleep(300)
-            exit(666)
-
-    except:
-        message("请检查您的环境/版本是否正常！")
-        time.sleep(10)
-        exit(666)
-
 def getUserInfo(ck, pinName, userNum):
     url = 'https://me-api.jd.com/user_new/info/GetJDUserInfoUnion?orgFlag=JD_PinGou_New&callSource=mainorder&channel=4&isHomewhite=0&sceneval=2&sceneval=2&callback=GetJDUserInfoUnion'
     headers = {
@@ -1065,7 +1021,7 @@ def getRemoteShopid():
     shopidList = []
     venderidList = []
     url = base64.decodebytes(
-        b"aHR0cHM6Ly9naXRlZS5jb20vY3VydGlubHYvUHVibGljL3Jhdy9tYXN0ZXIvT3BlbkNhcmQvc2hvcGlkLnR4dA==")
+        b"aHR0cHM6Ly9naXRlZS5jb20vY3VydGlubHYvUHVibGljL2Jsb2IvbWFzdGVyL09wZW5DYXJkL3Nob3BpZC50eHQ=")
     try:
         rShopid = gettext(url)
         rShopid = rShopid.split("\n")
