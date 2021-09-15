@@ -666,6 +666,19 @@ def iscookie():
         message("cookie 格式错误！...本次操作已退出")
         exitCodeFun(4)
 
+ def gettext(url):
+    try:
+        resp = requests.get(url, timeout=60).text
+        if '该内容无法显示' in resp:
+            return gettext(url)
+        return resp
+    except Exception as e:
+        print(e)
+    except:
+        message("请检查您的环境/版本是否正常！")
+        time.sleep(10)
+        exit(666)
+       
 def getUserInfo(ck, pinName, userNum):
     url = 'https://me-api.jd.com/user_new/info/GetJDUserInfoUnion?orgFlag=JD_PinGou_New&callSource=mainorder&channel=4&isHomewhite=0&sceneval=2&sceneval=2&callback=GetJDUserInfoUnion'
     headers = {
