@@ -666,12 +666,6 @@ def iscookie():
         message("cookie 格式错误！...本次操作已退出")
         exitCodeFun(4)
 
- def gettext(url):
-    try:
-        resp = requests.get(url, timeout=60).text
-        if '该内容无法显示' in resp:
-            return gettext(url)
-        return resp
     except Exception as e:
         print(e)
     except:
