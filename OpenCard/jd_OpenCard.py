@@ -13,12 +13,10 @@ version = 'v1.2.2'
 readmes = """
 # JD入会领豆小程序
 ![JD入会领豆小程序](https://raw.githubusercontent.com/curtinlv/JD-Script/main/OpenCrad/resultCount.png)
-
 ## 使用方法
 #### [手机用户（参考） https://mp.weixin.qq.com/s/ih6aOURXWM-iKrhvMyR3mw](https://mp.weixin.qq.com/s/ih6aOURXWM-iKrhvMyR3mw)
 #### [PC用户 （参考） https://mp.weixin.qq.com/s/JmLxAecZAlEc4L2sZWnn1A](https://mp.weixin.qq.com/s/JmLxAecZAlEc4L2sZWnn1A)
 #### [v4-bot用户 （参考） https://github.com/curtinlv/JD-Script/pull/12#issue-652134788](https://github.com/curtinlv/JD-Script/pull/12#issue-652134788)
-
 ##  目录结构
     JD-Script/                  #仓库
     |-- LICENSE
@@ -29,7 +27,6 @@ readmes = """
     |   |-- Readme.md           # 说明书
     |   `-- start.sh            # shell脚本（非必要）
     `-- README.md
-
     log目录结构、临时目录（可删除）：
     log
     ├── memory.json                        # 记忆、统计功能临时存放参数
@@ -37,17 +34,14 @@ readmes = """
     ├── 入会N豆以上的shopid-2021-05-23.txt   # 记录满足入会条件的shopid
     ├── 入会汇总.txt                        # 记录所有入会店铺送豆的加入、注销链接
     ├── 可退会账号【账号id】.txt              # 记录跑脚本之前已经过入会且目前送豆的注销链接（可优先退会）
-
 ### `【兼容环境】`
     1.Python3.3+ 环境
     2.兼容ios设备软件：Pythonista 3、Pyto(已测试正常跑，其他软件自行测试)   
     3.Windows exe 
-
     安装依赖模块 :
     pip3 install requests
     执行：
     python3 jd_OpenCard.py
-
     start.sh 脚本运行方法：
     1.适合定时任务或不想依赖ini配置文件。 
     2.支持单号跑多开，如
@@ -56,7 +50,6 @@ readmes = """
     3.定时任务（参考）：
        0 8 * * * sh /home/curtin/JD-Script/OpenCard/start.sh
        2 8 * * * sh /home/curtin/JD-Script/OpenCard/start_2.sh
-
 ## `【更新记录】`
     2021.6.19: (v1.2.2)
         * 修复多线程报错
@@ -86,11 +79,9 @@ readmes = """
         * 新增远程获取shopid功能
             - isRemoteSid=yes #开启
         * 修改已知Bug
-
     2021.5.9：(v1.0.4 Beta)
         * 优化代码逻辑
         * 打包exe版本测试
-
     2021.5.8：(v1.0.3)
         * 优化记忆功能逻辑：
             - cookiek个数检测
@@ -98,18 +89,15 @@ readmes = """
             - 上一次中断最后记录的账号id检测不存在本次ck里面
             - 临时文件log/memory.json是否存在
             - 以上任意一条命中则记忆接力功能不生效。
-
     2021.5.7：(v1.0.2)
         * 优化代码逻辑
         * 修复已知Bug
-
     2021.5.5：(v1.0.1)
         * 新增记忆功能，如中断后下次跑会接着力跑（默认开启）
             - memory= True
         * 新增仅记录shopid，不入会功能（默认关闭）
             - onlyRecord = no
         * 修复已知Bug
-
     2021.5.4：(v1.0.0)
         * 支持多账号
             - JD_COOKIE=pt_key=xxx;pt_pin=xxx;&pt_key=xxx;pt_pin=xxx; #多账号&分隔
@@ -121,10 +109,8 @@ readmes = """
             - log/可销卡汇总.txt #记录开卡送豆的店铺销卡链接
             - log/shopid-yyyy-mm-dd.txt #记录当天所有入会送豆的shopid
             - log/可销卡账号xxx.txt #记录账号可销卡的店铺
-
 ### `【账号参数配置说明】`
 ### 主配置文件[ OpenCardConfig.ini ] 请保持utf-8默认格式
-
  变量  | 值  | 说明
  ---- | ----- | ------  
  JD_COOKIE  | pt_key=xxx;pt_pin=xxx;  | 必要(多账号&分隔) 
@@ -139,16 +125,18 @@ readmes = """
         export JD_COOKIE='pt_key=xxx;pt_pin=xxx;' (多账号&分隔)
         export openCardBean=30
         export xxx=xxx
-
 #### Ps:您可以到以下途径获取最新的shopid.txt，定期更新：
-
 ###### [GitHub仓库 https://github.com/curtinlv/JD-Script](https://github.com/curtinlv/JD-Script) 
+###### [Gitee仓库 https://gitee.com/curtinlv/JD-Script](https://gitee.com/curtinlv/JD-Script)
+###### [TG频道 https://t.me/TopStyle2021](https://t.me/TopStyle2021)
+###### [TG群 https://t.me/topStyle996](https://t.me/topStyle996)
+###### 关注公众号【TopStyle】回复：shopid
+![TopStyle](https://gitee.com/curtinlv/img/raw/master/gzhcode.jpg)
+# 
     @Last Version: %s
-
     @Last Time: 2021-06-19 13:55
-
     @Author: Curtin
-
+#### **仅以学习交流为主，请勿商业用途、禁止违反国家法律 ，转载请留个名字，谢谢!** 
 # End.
 [回到顶部](#readme)
 """ % version
@@ -171,6 +159,8 @@ scriptHeader = """
 ║                                      ║
 ════════════════════════════════════════
 @Version: {}""".format(version)
+remarks = '\n\n\tTG交流 : https://t.me/topstyle996\n\n\tTG频道 : https://t.me/TopStyle2021\n\n\t公众号 : TopStyle\n\n\t\t\t--By Curtin\n'
+
 timestamp = int(round(time.time() * 1000))
 today = datetime.datetime.now().strftime('%Y-%m-%d')
 # 获取当前工作目录
@@ -666,7 +656,7 @@ def iscookie():
         message("cookie 格式错误！...本次操作已退出")
         exitCodeFun(4)
 
- # 检查是否有更新版本
+# 检查是否有更新版本
 
 def gettext(url):
     try:
@@ -678,7 +668,7 @@ def gettext(url):
         print(e)
 
 def isUpdate():
-    global footer, readme1, readme2,readme3, uPversion
+    global footer, readme1, readme2, readme3, uPversion
     url = base64.decodebytes(
         b"aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3ZpdmlvbmcvSkQtU2NyaXB0L21haW4vT3BlbkNhcmQvdXBkYXRlLmpzb24=")
     try:
@@ -686,6 +676,7 @@ def isUpdate():
         result = json.loads(result)
         isEnable = result['isEnable']
         uPversion = result['version']
+        info = result['info']
         readme1 = result['readme1']
         readme2 = result['readme2']
         readme3 = result['readme3']
@@ -694,7 +685,7 @@ def isUpdate():
         getWait = result['s']
         if isEnable > 50 and isEnable < 150:
             if version != uPversion:
-                print(f"\n当前最新版本：【{uPversion}】\n")
+                print(f"\n当前最新版本：【{uPversion}】\n\n{info}\n")
                 message(f"{readme1}{readme2}{readme3}")
                 time.sleep(getWait)
             else:
@@ -709,7 +700,7 @@ def isUpdate():
         message("请检查您的环境/版本是否正常！")
         time.sleep(10)
         exit(666)
-      
+
 def getUserInfo(ck, pinName, userNum):
     url = 'https://me-api.jd.com/user_new/info/GetJDUserInfoUnion?orgFlag=JD_PinGou_New&callSource=mainorder&channel=4&isHomewhite=0&sceneval=2&sceneval=2&callback=GetJDUserInfoUnion'
     headers = {
@@ -882,7 +873,7 @@ def isMemory(memorylabel, startNum1, startNum2, midNum, endNum, pinNameList):
                         return startNum1, startNum2, memorylabel
                     if memoryJson['t1_startNum'] + 1 == midNum and memoryJson['t2_startNum'] + 1 == endNum:
                         print(
-                            f"\n上次已完成所有shopid，n请输入 0 或 1\n0 : 退出。\n1 : 重新跑一次，以防有漏")
+                            f"\n上次已完成所有shopid，\n\nPs:您可以关注公众号或TG频道获取最新shopid。\n公众号: TopStyle\n电报TG:https://t.me/TopStyle2021\n\n请输入 0 或 1\n0 : 退出。\n1 : 重新跑一次，以防有漏")
                         try:
                             getyourNum = int(input("正在等待您的选择："))
                             if getyourNum == 1:
@@ -1214,10 +1205,10 @@ def OpenVipCard(startNum: int, endNum: int, shopids, cookies, userNames, pinName
 # start
 def start():
     global allUserCount
-    print(scriptHeader) 
-    outfile("Readme.md", readmes, True) 
+    print(scriptHeader)
+    outfile("Readme.md", readmes, True)
     isUpdate()
-    global endShopidNum, midNum, allUserCount   
+    global endShopidNum, midNum, allUserCount
     if isRemoteSid:
         message("已启用远程获取shopid")
         allShopid, venderidList = getRemoteShopid()
@@ -1284,7 +1275,8 @@ def start():
         message(f"\n本次总累计获得：{all_get_bean} 京豆")
     time.sleep(1)
     message("\n------- 入会总耗时 : %.03f 秒 seconds -------" % (endtime - starttime))
-
-    if __name__ == '__main__':
+    print("{0}\n{1}\n{2}".format("*" * 30, scriptHeader, remarks))
+    send("【JD入会领豆】", message_info)
+    exitCodeFun(0)
+if __name__ == '__main__':
     start()
-
