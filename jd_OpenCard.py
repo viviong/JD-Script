@@ -178,7 +178,6 @@ scriptHeader = """
 ║                                      ║
 ════════════════════════════════════════
 @Version: {}""".format(version)
-remarks = '\n\n\tTG交流 : https://t.me/topstyle996\n\n\tTG频道 : https://t.me/TopStyle2021\n\n\t公众号 : TopStyle\n\n\t\t\t--By Curtin\n'
 
 timestamp = int(round(time.time() * 1000))
 today = datetime.datetime.now().strftime('%Y-%m-%d')
@@ -687,7 +686,7 @@ def gettext(url):
         print(e)
 
 def isUpdate():
-    global footer, readme1, readme2, readme3, uPversion
+    global footer, readme1, readme2, uPversion
     url = base64.decodebytes(
         b"aHR0cHM6Ly9naXRlZS5jb20vY3VydGlubHYvUHVibGljL3Jhdy9tYXN0ZXIvT3BlbkNhcmQvdXBkYXRlLmpzb24=")
     try:
@@ -698,17 +697,16 @@ def isUpdate():
         info = result['info']
         readme1 = result['readme1']
         readme2 = result['readme2']
-        readme3 = result['readme3']
         pError = result['m']
         footer = result['footer']
         getWait = result['s']
         if isEnable > 50 and isEnable < 150:
             if version != uPversion:
                 print(f"\n当前最新版本：【{uPversion}】\n\n{info}\n")
-                message(f"{readme1}{readme2}{readme3}")
+                message(f"{readme1}{readme2}")
                 time.sleep(getWait)
             else:
-                message(f"{readme1}{readme2}{readme3}")
+                message(f"{readme1}{readme2}")
                 time.sleep(getWait)
         else:
             print(pError)
