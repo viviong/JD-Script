@@ -503,7 +503,7 @@ def gettext(url):
 
 
 def isUpdate():
-    global footer,readme,uPversion,scriptName
+    global uPversion,scriptName
     url = base64.decodebytes(
         b"aHR0cHM6Ly9naXRlZS5jb20vY3VydGlubHYvUHVibGljL3Jhdy9tYXN0ZXIvRm9sbG93R2lmdHMvdXBkYXRlLmpzb24=")
     try:
@@ -513,17 +513,13 @@ def isUpdate():
         isEnable = result['isEnable']
         uPversion = result['version']
         info = result['info']
-        readme = result['readme']
-        pError = result['m']
-        footer = result['footer']
+        pError = result['m']       
         getWait = result['s']
         if isEnable > 50 and isEnable < 150:
             if version != uPversion:
                 print(f"\n当前最新版本：【{uPversion}】\n\n{info}\n")
-                message(f"{readme}")
                 exitCodeFun(888)
             else:
-                message(f"{readme}")
                 time.sleep(getWait)
         else:
             print(pError)
